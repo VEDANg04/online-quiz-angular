@@ -1,0 +1,49 @@
+<div *ngIf="questions.length === 0" style="text-align:center; margin-top:50px;">
+  <h2>No questions available</h2>
+  <p>Please add questions from the Admin Panel</p>
+
+  <button
+    mat-raised-button
+    color="primary"
+    routerLink="/admin">
+    Go to Admin Panel
+  </button>
+</div>
+
+<mat-card *ngIf="questions.length > 0" class="quiz-container">
+  
+
+  <mat-card-header>
+    <mat-card-title>Online Quiz Application</mat-card-title>
+    <mat-card-subtitle>
+      Time Left: {{ timeLeft }} seconds
+    </mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <p><strong>Question {{ currentQuestion + 1 }} of {{ questions.length }}</strong></p>
+
+    <p class="question">
+      {{ questions[currentQuestion].question }}
+    </p>
+
+    <mat-radio-group [(ngModel)]="selectedOption">
+      <mat-radio-button
+        *ngFor="let option of questions[currentQuestion].options; let i = index"
+        [value]="i">
+        {{ option }}
+      </mat-radio-button>
+    </mat-radio-group>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="nextQuestion()"
+      [disabled]="selectedOption === null">
+      Next
+    </button>
+  </mat-card-actions>
+
+</mat-card>

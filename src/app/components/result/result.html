@@ -1,0 +1,19 @@
+<h2>Quiz Completed 🎉</h2>
+
+<p><strong>Score:</strong> {{ score }} / {{ total }}</p>
+<p><strong>Percentage:</strong> {{ percentage | number:'1.0-2' }}%</p>
+
+<p>
+  <strong>Status:</strong>
+  <span [style.color]="status === 'PASS' ? 'green' : 'red'">
+    {{ status }}
+  </span>
+</p>
+
+<button
+  mat-raised-button
+  color="primary"
+  (click)="restartQuiz()">
+  Restart Quiz
+</button>
+

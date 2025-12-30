@@ -1,0 +1,19 @@
+[
+  {
+    "id": 1,
+    "question": "What does HTML stand for?",
+    "options": [
+      "Hyper Text Markup Language",
+      "High Text Machine Language",
+      "Hyperlinks Text Mark Language",
+      "Home Tool Markup Language"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 2,
+    "question": "Which directive is used for loops in Angular?",
+    "options": ["ngIf", "ngFor", "ngSwitch", "ngModel"],
+    "answer": 1
+  }
+]

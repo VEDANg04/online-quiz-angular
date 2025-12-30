@@ -1,0 +1,44 @@
+<h2>Admin Panel – Add Question</h2>
+
+<label>Question:</label>
+<input type="text" [(ngModel)]="question">
+
+<label>Option 1:</label>
+<input type="text" [(ngModel)]="options[0]">
+
+<label>Option 2:</label>
+<input type="text" [(ngModel)]="options[1]">
+
+<label>Option 3:</label>
+<input type="text" [(ngModel)]="options[2]">
+
+<label>Option 4:</label>
+<input type="text" [(ngModel)]="options[3]">
+
+<label>Correct Answer Index (0–3):</label>
+<input type="number" [(ngModel)]="answer" min="0" max="3">
+
+<br><br>
+
+<button (click)="addQuestion()">Add Question</button>
+<button (click)="goToQuiz()">Go to Quiz</button>
+
+<hr>
+
+<h3>Existing Questions</h3>
+
+<div *ngFor="let q of questions; let i = index" class="question-box">
+
+  <p><strong>Q{{ i + 1 }}:</strong> {{ q.question }}</p>
+
+  <ul>
+    <li *ngFor="let opt of q.options">
+      {{ opt }}
+    </li>
+  </ul>
+
+  <button (click)="deleteQuestion(i)">
+    Delete Question
+  </button>
+
+</div>
